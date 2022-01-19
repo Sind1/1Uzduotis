@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+void rikiavimas (int nums[], int n);
+
+int main (){
+    int nums[] = {3, 2, 1, 4};
+    int n = sizeof (nums) / sizeof (nums[0]);
+
+    rikiavimas(nums, n);
+
+    for (int i = 0; i < n; i++){
+        cout << nums[i] << " ";
+    }
+
+}
+
+void rikiavimas (int nums[], int n){
+    int j = -1;
+    for (int i = 0; i < n; i++){
+        if (nums[i] % 2 == 0) {
+            j++;
+            swap(nums[i], nums[j]);
+        }
+    }
+}
